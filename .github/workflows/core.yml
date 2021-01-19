@@ -59,4 +59,4 @@ jobs:
           mvn install -DskipTests -DskipRat -pl zeppelin-interpreter-integration,jdbc,zeppelin-web,spark/spark-dependencies,markdown -am -Pspark-2.4 -Pspark-scala-2.11 -Phadoop2 -Pintegration -B
           mvn clean package -pl zeppelin-plugins -amd -DskipTests -B
       - name: run tests
-        run: mvn test -DskipRat -pl zeppelin-interpreter-integration,jdbc,zeppelin-web,spark/spark-dependencies,markdown -am -Pspark-2.4 -Pspark-scala-2.11 -Phadoop2 -Pintegration -B -Dtest=JdbcIntegrationTest,org.apache.zeppelin.spark.*,org.apache.zeppelin.kotlin.* -DfailIfNoTests=false
+        run: mvn test -X -e -DskipRat -pl zeppelin-interpreter-integration,jdbc,zeppelin-web,spark/spark-dependencies,markdown -am -Pspark-2.4 -Pspark-scala-2.11 -Phadoop2 -Pintegration -B -Dtest=JdbcIntegrationTest,org.apache.zeppelin.spark.*,org.apache.zeppelin.kotlin.* -DfailIfNoTests=false
